@@ -4,14 +4,6 @@ import type { HeadFC, PageProps } from "gatsby"
 import { graphql } from "gatsby"
 
 const IndexPage: React.FC<PageProps> = ({ data }) => {
-  console.log(data)
-  // const posts = [{
-  //   title: 'TipeoNada',
-  //   subtitle: 'Primer juego que hago en C++ (SDL2), un estilo de ejercicio para tipear',
-  //   tags: ['GameDev'],
-  //   imgPath: '/images/tipeo-nada/preview.png',
-  //   link: 'content/tipeo-nada'
-  // }]
   return (
     <div className="font-ns">
       <header className="text-center mb-8">
