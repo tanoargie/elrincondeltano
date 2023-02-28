@@ -1,0 +1,30 @@
+---
+title: Tipeo Nada
+subtitle: Primer juego que hago en C++ (SDL2), un estilo de ejercicio para tipear
+imgPath: tipeo-nada.png
+slug: tipeo-nada
+tags:
+  - gamedev
+---
+\
+Buenas, tanto tiempo. Hice un juego en C++ usando SDL2 y quería escribir algunas cosas que fui viendo/descubriendo.
+
+\
+La idea era hacer una especie de juego de tipeo rápido, de esos que hay a mansalva en varias páginas web. Se llama TipeoNada y podes jugarlo [acá](https://storage.googleapis.com/tipeo-nada-web/TipeoNadaWeb.html) y todo el código del juego lo podés encontrar [acá](https://github.com/francoserio/tipeo-nada)
+
+\
+El primer desafío fue encontrar un corpus con bastantes palabras. Ese txt es el que está en **assets/words.txt** y obviamente el usuario lo puede cambiar a piacere.
+
+\
+Luego, para que el juego ande en desktop fue bastante _straightforward_. Todos las librerías SDL y sus extensiones (como SDL_Mixer para el audio o SDL_Image para las imágenes) son fácilmente instalables en OSX con homebrew (y en Linux con apt-get). Sin embargo, todo se complicó cuando quisimos agregar la posibilidad de que el usuario lo pueda jugar en la web. Para ésto utilizamos Emscripten, que es una herramienta que permite compilar C/C++ en JS y WASM, para que el juego sea ejecutable desde cualquier navegador. Creo que en este caso, todavía falta pulir bastante desde el lado de Emscripten para que la experiencia de desarrollar un juego en C/C++ y hacerlo portable sea más amigable. Algunas cosillas que encontré:
+- Las letras compuestas como la é, ü, que encontramos en el español pero también en otros idiomas con el francés, no están soportadas por Emscripten. Hay un [issue](https://github.com/ocornut/imgui/issues/3654) parecido sobre ésto en Github en un proyecto que usa Emscripten y SDL por atrás.
+- El evento SDL_TEXTINPUT del SDL tiene un atributo **event.text.text** cuando estamos en SDL puro. Sin embargo, ese atributo está en null si nos vamos a Emscripten.
+- Yo uso el SDL_Mixer para agregar un audio como background en el juego (cargando un archivito mp3). Mientras en SDL el código **Mix_Init(MIX_INIT_MP3)** devuelve 0 si la inicialización no es exitosa, si compilamos con Emscripten el mismo devuelve 0 cuando sí lo es. (insertar meme de WTF de Jackie Chan)
+
+\
+Les dejo algunas capturas del juego.
+
+<center><img src="/images/tipeo-nada/game1.png" /></center>
+<br/>
+<center><img src="/images/tipeo-nada/game2.png" /></center>
+
