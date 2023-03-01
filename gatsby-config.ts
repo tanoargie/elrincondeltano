@@ -18,6 +18,16 @@ const config: GatsbyConfig = {
         "name": "content",
         "path": `${__dirname}/src/content`
       }
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'El Rincon del Tano',
+        short_name: 'ERDT',
+        start_url: '/',
+        display: 'standalone',
+        icon: 'src/images/favicon.png'
+      }
     }
   ]
 };
