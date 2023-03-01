@@ -5,4 +5,4 @@ COPY . .
 RUN npm i
 RUN npm run build
 
-CMD ["npm", "run", "serve", "-p", "3006"]
+CMD ["npm", "run", "serve", "--", "-p", "3006"]
