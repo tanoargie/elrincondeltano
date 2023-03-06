@@ -10,8 +10,8 @@ type PostPreviewProps = {
 
 const PostPreview = ({ title, subtitle, tags, imgPath, slug }: PostPreviewProps) => (
   <div className="font-ns flex flex-col gap-4">
-    <img src={`images/${imgPath}`} className="rounded h-1/2 w-1/2" />
-    <div className="h-2/6">
+    <img src={`images/${imgPath}`} className="rounded h-2/6 w-1/3" />
+    <div className="h-3/6">
       <span className="font-bold">
         {title}
       </span>
