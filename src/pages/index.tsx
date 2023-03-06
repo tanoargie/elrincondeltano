@@ -18,7 +18,9 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
       </header>
       <main>
         <div></div>
-        <div className="grid gap-4 grid-cols-2 grid-rows-2 m-4 lg:grid-cols-4 lg:grid-rows-4 md:grid-cols-3 md:grid-rows-3">{data.allMdx.nodes.map(post => <PostPreview key={post.frontmatter.slug} {...post.frontmatter} />)}</div>
+        <div className="grid gap-4 grid-cols-2 grid-rows-2 m-4 lg:grid-cols-4 lg:grid-rows-4 md:grid-cols-3 md:grid-rows-3">
+          {data.allMdx.nodes.map(post => <PostPreview key={post.frontmatter.slug} {...post.frontmatter} />)}
+        </div>
       </main>
     </div>
   )

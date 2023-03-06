@@ -1,0 +1,22 @@
+---
+title: Cómo está hecho el Blog?
+subtitle: Algunas cosilllas sobre cómo hice este blog de mierda
+imgPath: gatsby.png
+slug: elrincondeltano-blog
+tags:
+  - blog
+  - web-development
+---
+Buenas, acá vengo a ventilar cómo hice éste blog que están viendo. Pensé en varias opciones. Entre ellas:
+* Jekyll
+* NextJS
+* Gatsby
+
+\
+Habiendo trabajado con Shopify anteriormente, sabía que Jekyll no podía ser una opción porque apenas entré a la página ví que usaba Liquid, uno de los peores lenguajes que existen en mi opinión. Con sólo pensar cuando tuve que hacer una condición con "and", "or" y "not" (mucho mas de ésto <a href="https://github.com/Shopify/liquid/issues/138" style={{ color: 'blue', textDecoration: 'underline' }}>acá</a>).
+
+\
+Después estaba NextJS. Ya había usado NextJS para la <a href="https://botonera-argenta.com.ar" style={{ color: 'blue', textDecoration: 'underline' }}>Botonera Argenta</a>. En ese momento tuve bastantes problemas con el tema del **sign-up/sign-in** (supongo que ahora estará mucho más pulido) y también con el tema de elegir la base de datos. En su momento para éste último había elegido Prisma, y por si esto no fuera poco, para el objetivo que tenía, no podía hacerlo **SIN** un backend aparte (aunque ahora no recuerdo por qué).
+
+\
+Entonces quedó una única posibilidad. Gatsby. Aparte de descartar las otras opciones, elegí Gatsby porque no iba a tener que hacer nada ni con bases de datos (estos posts están en el código en MDX) ni tampoco un **sign-up/sign-in**. Iba a ser un simple blog estático, y la verdad que hasta que pude agregar Tailwind y le agarré la mano a MDX todo fue bastante rápido. Después lo deployee en una VM de Google Cloud, donde tengo alojados todos mis projectos básicamente. Y agregué un Dockerfile para _buildear_ y hacer _serve_.
