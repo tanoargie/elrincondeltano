@@ -1,0 +1,204 @@
+%-------------------------
+% Resume in Latex
+% Author : Franco Serio
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{https://francoserio.github.io/}{\Large Franco Serio}} & Email : \nolinkurl{mailto:francoagustinserio@gmail.com}\\
+  \nolinkurl{https://francoserio.github.io} & Mobile : +115436553600 \\
+\end{tabular*}
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {School of Exact and Natural Sciences - University of Buenos Aires}{Buenos Aires, Argentina}
+      {Master of Science in Computer Science}{2014 -- present}
+    \resumeSubheading
+      {Highest College - Hull Cordell}{Buenos Aires, Argentina}
+      {High School}{2013}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Rocket Insights}{Remote}
+      {Software Engineer}{Jun 2021 - Present}
+      \resumeItemListStart
+        \resumeItem{Moody's}
+          {Working in the moody's lending angular-based web-app project.}
+        \resumeItem{Simplisafe}
+          {Working in the company's Gatsby based e-commerce site mainly.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Amalgama}{Nu\~nez, Federal District, Argentina}
+      {Software Engineer}{Dec 2018 - Jun 2021}
+      \resumeItemListStart
+        \resumeItem{BigFive}
+          {Worked in front-end features both in the web-app dashboard made in ReactJS and the mobile application made in React-Native.}
+        \resumeItem{Honeycomb}
+          {I was the backend developer of this web application made entirely in NodeJS with HapiJS framework and a MongoDB database. Backend deployed using AWS Beanstalk. Also configured Jenkins server for CI/CD}
+	\resumeItem{Quadminds}
+          {As a Wordpress developer I added some features to the site.}
+	\resumeItem{Repasar}
+          {Web based application for online tutoring made in ReactJS with SSR. Also configured Gitlab CI/CD with Slack and AWS EC2 integration.}
+	\resumeItem{VeryBusy}
+          {Rails developer for a web-based collaboration tool for retouchers and photographers. Others technologies used include PostgresQL}
+	\resumeItem{MiBA}
+          {Django backend-developer in a mobile application aimed at helping the citizens of the City of Buenos Aires. Backed with a MySQL database.}
+      \resumeItemListEnd
+
+  \resumeSubheading
+      {Botmaker}{Nu\~nez, Federal District, Argentina}
+      {Software Engineer}{Jan 2018 - Dec 2018}
+      \resumeItemListStart
+        \resumeItem{Botmaker.com}
+          {Botmaker is a SaaS chatbot platform. Here I worked as a ReactJS developer expanding the site with new features for our clients.}
+        \resumeItem{Botmaker Engine}
+          {Worked in the engine as a Java and NodeJS backend developer with Postgres database and Google BigQuery for big data. First introduction to GCP ecosystem using Cloud Functions.}
+      \resumeItemListEnd
+
+  \resumeSubheading
+      {Sarsy}{Vicente L\'opez, Buenos Aires, Argentina}
+      {Jr. Software Developer}{Jun 2016 - Jun 2017}
+      \resumeItemListStart
+        \resumeItem{Gedeco}
+          {Web application to help inspectors to ensure buildings don\/'t have irregularities. This was made in the .Net framework with VB and SQL Server.}
+        \resumeItem{Vicente L\'opez Hospital}
+          {Windows desktop application developed in C\# for the administration of the Bernardo Houssay hospital.}
+      \resumeItemListEnd
+      
+% --------Multiple Positions Heading------------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{Some Personal Projects}
+ \resumeSubHeadingListStart
+   \resumeSubItem{La Botonera Argenta}
+     {NextJS web-app displaying sounds from famous argentinians. Backed with NestJS. Deployed in GCP, first using Cloud Run and Cloud SQL (PostgresQL) but then migrated to a dockerized app inside a Compute Engine's VM. Cloud Storage is used for saving user's audios and Google DNS for mapping domains. It's online at \nolinkurl{https://botonera-argenta.com.ar}}
+   \resumeSubItem{Fernandez Bot}
+     {Small bot using python to send a tweet each day from \nolinkurl{https://twitter.com/CuantoFaltaAF}. Using GCP services such as Cloud Scheduler and Cloud Functions.}
+   \resumeSubItem{Samser}
+     {Rails web-app with a front-end in VueJS aimed at pet owners and vets. Using Google's Compute Engine for deployment and Google DNS. Also online at \nolinkurl{https://samser.co/}}
+   \resumeSubItem{Youtrmr}
+     {Rust CLI application to trim a youtube video and download it. You can find it at \nolinkurl{https://github.com/francoserio/youtube-trimmer/}}
+ \resumeSubHeadingListEnd
+
+
+%--------PROGRAMMING SKILLS------------
+\section{Programming Skills}
+  \resumeSubHeadingListStart
+    \item{
+      \textbf{Languages}{: Python, Javascript, C++, SQL, Latex, Ruby, HTML, CSS}
+    }
+    \item{
+      \textbf{Technologies}{: AWS, GCP, NodeJS, ReactJS, Django, Rails, Docker, Nginx, Vim, Unix, Gitlab CI/CD, React Native, Postgres, MySQL}
+    }
+  \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
