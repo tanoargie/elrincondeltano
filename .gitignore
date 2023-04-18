@@ -3,5 +3,4 @@ node_modules/
 public
 src/gatsby-types.d.ts
 src/resume/resume.log
-src/resume/resume.aux
 dist/
