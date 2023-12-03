@@ -1,9 +1,17 @@
 ---
 title: Movie Scraper
-subtitle: Hice un scraper de películas de los principales cines de Argentina
-imgPath: movie-scraper.webp
+subtitle: Scraper de películas de los principales cines de Argentina
+imgPath: movie-scraper.jpeg
 slug: movie-scraper
 tags:
   - web-dev
   - scraping
 ---
+\
+En otro rango de projectos, hice un scraper en NestJS para aprender y tomar contacto con el framework.
+\
+Las principales cadenas de cines acá en Argentina son Cinépolis, Hoyts y Showcase. Lo que traté de hacer es ver en cada una de las páginas cómo es que cada una obtiene los horarios de cada película en cada cine y lo pasé a mi app para guardarlos y después poder consultarlos. O sea, básicamente una especie de ingeniería inversa.
+\
+A su vez, NestJS proporciona un cron que uso para que cada día se puedan scrapear los sitios de las 3 cadenas y guardalos en una base de datos de PostgresQL. Luego el usuario puede consultar a los endpoints para saber a qué hora, en qué cine y qué película se pasa.
+\
+Debo decir que me encantó la idea de los módulos, cosa que creo que se basó en lo que fue Angular 2. Me parece que es EL framework para backend en NodeJS. Sí, es mucho mas opinionated que otros frameworks como ExpressJS pelado o Koa, pero justamente eso es lo que me gusta, me parece que está bien diseñado.
