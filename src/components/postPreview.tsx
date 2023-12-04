@@ -16,6 +16,9 @@ const PostPreview = ({ title, subtitle, tags, imgPath, slug }: PostPreviewProps)
         {title}
       </span>
       <p className="opacity-50">{subtitle}</p>
+      <div className="flex flex-row gap-2">
+        {tags.map(tag => <span key={tag} className="shadow-lg text-white rounded-full bg-gray-400 border border-gray-300 px-2">{tag}</span>)}
+      </div>
     </div>
     <a href={`content/${slug}`} className="flex rounded bg-emerald-500 p-4 text-white md:w-1/2 w-full text-center h-1/6 items-center justify-center">Leer más</a>
   </div>
