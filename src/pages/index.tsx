@@ -1,16 +1,39 @@
-import React, { useState } from "react"
+import React, { useState, useMemo } from "react"
 import PostPreview from '../components/postPreview'
-import type { HeadFC, PageProps } from "gatsby"
+import type { HeadFC } from "gatsby"
 import { graphql } from "gatsby"
 
-const IndexPage: React.FC<PageProps> = ({ data }) => {
-  const tagOptions = data.allMdx.nodes.map(post => post.frontmatter.tags)
-  const uniqueTagOptions = ['todos'].concat([...new Set(tagOptions.flat(1))]);
-  const [ selectedTag, setSelectedTag ] = useState('todos')
-  let filteredPosts = data.allMdx.nodes;
-  if (selectedTag !== 'todos') {
-    filteredPosts = filteredPosts.filter(post => post.frontmatter.tags.includes(selectedTag))
+type Post = {
+  frontmatter: {
+    slug: string,
+    subtitle: string,
+    title: string,
+    imgPath: string,
+    tags: Array<string>
   }
+}
+
+type Data = {
+  data: {
+    allMdx: {
+      nodes: Array<Post>
+    }
+  }
+}
+
+const filterPosts = (posts: Array<Post>, selectedTag: string) => {
+  if (selectedTag !== 'todos') {
+    return posts.filter(post => post.frontmatter.tags.includes(selectedTag))
+  }
+  return posts;
+}
+
+const IndexPage = ({ data }: Data) => {
+  const posts = data.allMdx.nodes;
+  const tagOptions = posts.map((post: Post) => post.frontmatter.tags)
+  const uniqueTagOptions = ['todos'].concat([...new Set<string>(tagOptions.flat(1))]);
+  const [selectedTag, setSelectedTag] = useState('todos')
+  const filteredPosts = useMemo(() => filterPosts(posts, selectedTag), [posts, selectedTag])
   return (
     <div className="font-ns">
       <header className="text-center mb-8">
