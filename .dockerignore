@@ -1,1 +1,9 @@
-node_modules
+node_modules/
+.gitignore
+.tool-versions
+.nvmrc
+README.md
+.eslintrc.js
+.cache/
+**/.git
+public/
