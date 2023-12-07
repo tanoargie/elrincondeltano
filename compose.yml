@@ -1,6 +1,6 @@
 services:
   app:
-    ports:
-      - "3006:3006"
     container_name: elrincondeltano
     build: .
+    ports:
+      - "3006:3006"

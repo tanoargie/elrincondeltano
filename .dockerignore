@@ -7,3 +7,8 @@ README.md
 .cache/
 **/.git
 public/
+resume/resume.aux
+resume/resume.log
+resume/resume.out
+tsconfig.json
+.eslintrc.js
