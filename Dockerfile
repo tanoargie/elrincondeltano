@@ -1,4 +1,4 @@
-FROM node:18.14-alpine as builder
+FROM node:18.14-alpine
 RUN apk add --update python3 make g++ && rm -rf /var/cache/apk/*
 RUN npm install -g node-gyp
 WORKDIR /app
