@@ -36,13 +36,13 @@ const IndexPage = ({ data }: Data) => {
   const filteredPosts = useMemo(() => filterPosts(posts, selectedTag), [posts, selectedTag])
   return (
     <div className="font-ns">
-      <header className="text-center mb-8">
+      <header className="text-center mb-4">
         <div className="flex flex-row place-content-between">
           <div className="flex items-center">
-            <img src="/images/logo.svg" className="w-12 h-12 m-4" />
+            <img src="/images/logo.svg" className="w-12 h-12 mt-4 mb-4 ml-4 mr-1" />
             <span className="italic">Tano Serio</span>
           </div>
-          <div className="flex items-center gap-4 mx-4">
+          <div className="flex items-center gap-4 m-4">
             <a href="resume/resume.pdf" target="_blank" className="font-bold underline">Curriculum</a>
             <a href="mailto:franco@samser.co" className="flex rounded bg-emerald-500 text-white p-4">Contactame</a>
           </div>
@@ -50,7 +50,7 @@ const IndexPage = ({ data }: Data) => {
         <h1 className="font-bold">
           El Rincón del Tano
         </h1>
-        <h3>Las boludeces de un escorpiano, pero en voz alta...</h3>
+        <h3>Las boludeces de un escorpiano, en voz alta.</h3>
       </header>
       <main>
         <div className="mx-4">
