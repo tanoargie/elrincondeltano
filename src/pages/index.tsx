@@ -40,7 +40,7 @@ const IndexPage = ({ data }: Data) => {
           </div>
           <div className="flex items-center gap-4 m-4">
             <a href="resume/resume.pdf" target="_blank" className="font-bold underline">Curriculum</a>
-            <a href="mailto:franco@samser.co" className="flex rounded bg-emerald-500 text-white p-4">Contactame</a>
+            <a href="mailto:franco@samser.co" className="flex rounded bg-emerald-900 text-white p-4">Contactame</a>
           </div>
         </div>
         <h1 className="font-bold">
