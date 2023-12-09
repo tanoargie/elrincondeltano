@@ -1,16 +1,12 @@
 import * as React from "react"
+import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image"
+import { Post } from '../utils/types'
 
-type PostPreviewProps = {
-  title: string,
-  subtitle: string,
-  tags: Array<string>,
-  imgPath: string,
-  slug: string
-}
+const PostPreview = ({ title, subtitle, tags, imgPath, slug }: Post) => {
+  const featuredImg = getImage(imgPath?.childImageSharp?.gatsbyImageData) as IGatsbyImageData
 
-const PostPreview = ({ title, subtitle, tags, imgPath, slug }: PostPreviewProps) => (
-  <div className="font-ns flex flex-col gap-4">
-    <img src={`images/${imgPath}`} className="rounded h-2/6 w-1/3" />
+  return <div className="font-ns flex flex-col gap-4">
+    <GatsbyImage image={featuredImg} className="rounded h-2/6 w-1/3" alt={title} />
     <div className="h-3/6">
       <span className="font-bold">
         {title}
@@ -22,6 +18,6 @@ const PostPreview = ({ title, subtitle, tags, imgPath, slug }: PostPreviewProps)
     </div>
     <a href={`content/${slug}`} className="flex rounded bg-emerald-500 p-4 text-white md:w-1/2 w-full text-center h-1/6 items-center justify-center">Leer más</a>
   </div>
-)
+}
 
 export default PostPreview;

@@ -2,26 +2,22 @@ import React, { useState, useMemo } from "react"
 import PostPreview from '../components/postPreview'
 import type { HeadFC } from "gatsby"
 import { graphql } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
+import { Post } from '../utils/types'
 
-type Post = {
-  frontmatter: {
-    slug: string,
-    subtitle: string,
-    title: string,
-    imgPath: string,
-    tags: Array<string>
-  }
+type PostData = {
+  frontmatter: Post
 }
 
 type Data = {
   data: {
     allMdx: {
-      nodes: Array<Post>
+      nodes: Array<PostData>
     }
   }
 }
 
-const filterPosts = (posts: Array<Post>, selectedTag: string) => {
+const filterPosts = (posts: Array<PostData>, selectedTag: string) => {
   if (selectedTag !== 'todos') {
     return posts.filter(post => post.frontmatter.tags.includes(selectedTag))
   }
@@ -30,7 +26,7 @@ const filterPosts = (posts: Array<Post>, selectedTag: string) => {
 
 const IndexPage = ({ data }: Data) => {
   const posts = data.allMdx.nodes;
-  const tagOptions = posts.map((post: Post) => post.frontmatter.tags)
+  const tagOptions = posts.map((post: PostData) => post.frontmatter.tags)
   const uniqueTagOptions = ['todos'].concat([...new Set<string>(tagOptions.flat(1))]);
   const [selectedTag, setSelectedTag] = useState('todos')
   const filteredPosts = useMemo(() => filterPosts(posts, selectedTag), [posts, selectedTag])
@@ -39,7 +35,7 @@ const IndexPage = ({ data }: Data) => {
       <header className="text-center mb-4">
         <div className="flex flex-row place-content-between">
           <div className="flex items-center">
-            <img src="/images/logo.svg" className="w-12 h-12 mt-4 mb-4 ml-4 mr-1" />
+            <StaticImage src="../images/logo.svg" alt="Samser Logo" className="w-12 h-12 mt-4 mb-4 ml-4 mr-1" />
             <span className="italic">Tano Serio</span>
           </div>
           <div className="flex items-center gap-4 m-4">
@@ -80,7 +76,11 @@ export const query = graphql`
           slug
           subtitle
           title
-          imgPath
+          imgPath {
+            childImageSharp {
+              gatsbyImageData(width: 250)
+            }
+          }
           tags
         }
       }
