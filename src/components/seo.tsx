@@ -21,6 +21,7 @@ export const SEO = ({ title, description, pathname, children }: SEOProps) => {
 
   return (
     <>
+      <html lang="es" />
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />

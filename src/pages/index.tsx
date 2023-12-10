@@ -47,12 +47,12 @@ const IndexPage = ({ data }: Data) => {
         <h1 className="font-bold">
           El Rincón del Tano
         </h1>
-        <h3>Las boludeces de un escorpiano, en voz alta.</h3>
+        <h2>Las boludeces de un escorpiano, en voz alta.</h2>
       </header>
       <main>
         <div className="mx-4">
-          <span>Filtrar por tag: </span>
-          <select id="tags-select" name="tags" defaultValue="todos" onChange={(e) => setSelectedTag(e.target.value)}>
+          <label htmlFor="tags">Filtrar por tag: </label>
+          <select id="tags" name="tags" defaultValue="todos" onChange={(e) => setSelectedTag(e.target.value)}>
             {uniqueTagOptions.map(tagOption => <option key={tagOption} value={tagOption}>{tagOption}</option>)}
           </select>
         </div>
