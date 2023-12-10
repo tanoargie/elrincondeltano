@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { MDXProvider } from "@mdx-js/react"
+import { SEO } from "../components/seo"
 
 const shortcodes = { Link } // Provide common components here
 
@@ -25,7 +26,7 @@ export default function PageTemplate({ data, children }: { data: Data, children:
   )
 }
 
-export const Head = ({ data }: { data: Data }) => <title>{data.mdx.frontmatter.title}</title>
+export const Head = ({ data }: { data: Data }) => <SEO title={data.mdx.frontmatter.title} />
 
 export const query = graphql`
   query($id: String!) {

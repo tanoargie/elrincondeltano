@@ -4,6 +4,7 @@ import type { HeadFC } from "gatsby"
 import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { Post } from '../utils/types'
+import { SEO } from "../components/seo"
 
 type PostData = {
   frontmatter: Post
@@ -65,7 +66,7 @@ const IndexPage = ({ data }: Data) => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>El Rincon del Tano</title>
+export const Head: HeadFC = () => <SEO />
 
 export const query = graphql`
   query {

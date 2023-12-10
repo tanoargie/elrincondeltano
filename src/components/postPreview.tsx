@@ -11,7 +11,7 @@ const PostPreview = ({ title, subtitle, tags, imgPath, slug }: Post) => {
       <span className="font-bold">
         {title}
       </span>
-      <p className="opacity-50">{subtitle}</p>
+      <p className="opacity-80">{subtitle}</p>
       <div className="flex flex-row gap-2">
         {tags.map(tag => <span key={tag} className="shadow-lg text-white rounded-full bg-gray-800 border border-gray-300 px-2 overflow-hidden whitespace-nowrap text-ellipsis">{tag}</span>)}
       </div>
