@@ -1,5 +1,9 @@
 import type { GatsbyConfig } from "gatsby";
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `elrincondeltano`,
@@ -29,6 +33,12 @@ const config: GatsbyConfig = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-custom`,
+      options: {
+        GTAG: process.env.GTAG,
       },
     },
     {
