@@ -1,5 +1,4 @@
 import React from "react"
-import { Script } from "gatsby"
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 
 type SEOProps = {
@@ -22,18 +21,6 @@ export const SEO = ({ title, description, pathname, children }: SEOProps) => {
 
   return (
     <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GTAG}`}
-        strategy="off-main-thread"
-      />
-      <Script id="gtag-config" strategy="off-main-thread" forward={[`gtag`]}>
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)};
-          gtag('js', new Date());
-          gtag('config', ${process.env.GTAG}, { page_path: location ? location.pathname + location.search + location.hash : undefined })
-        `}
-      </Script>
       <html lang="es" />
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
