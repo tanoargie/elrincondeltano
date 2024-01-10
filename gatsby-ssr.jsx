@@ -118,6 +118,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     <Script
       src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GTAG}`}
       strategy="off-main-thread"
+      forward={[`dataLayer.push`]}
     />,
     <Script id="gtag-config" strategy="off-main-thread" forward={[`gtag`]}>
       {`
