@@ -115,10 +115,16 @@ export const onRenderBody = ({ setHeadComponents }) => {
       crossOrigin="anonymous"
       key="nunitoSansRegular"
     />,
+    <script
+      key="partytown-vanilla-config"
+      dangerouslySetInnerHTML={{
+        __html: `partytown = { debug: true }`,
+      }}
+    />,
     <Script
       src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GTAG}`}
       strategy="off-main-thread"
-      forward={[`dataLayer.push`]}
+      forward={[`dataLayer.push`, `gtag`]}
     />,
     <Script id="gtag-config" strategy="off-main-thread" forward={[`gtag`]}>
       {`
