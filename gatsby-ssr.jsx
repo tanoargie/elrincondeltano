@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Script } from "gatsby"
+import { Partytown } from '@builder.io/partytown/react';
 
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
@@ -115,47 +115,17 @@ export const onRenderBody = ({ setHeadComponents }) => {
       crossOrigin="anonymous"
       key="nunitoSansRegular"
     />,
+    <Partytown key="partytown" forward={['gtag', 'dataLayer.push']} />,
+    <script key="google-analytics" type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GTAG}`} />,
     <script
-      key="partytown-vanilla-config"
+      key="google-analytics-config"
+      type="text/partytown"
       dangerouslySetInnerHTML={{
-        __html: `partytown = { debug: true }`,
+        __html: `window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag(){ window.dataLayer.push(arguments);}
+        gtag('js', new Date()); 
+        gtag('config', '${process.env.GTAG}', { send_page_view: false })`
       }}
-    />,
-    <Script
-      src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GTAG}`}
-      strategy="off-main-thread"
-      forward={[`dataLayer.push`, `gtag`]}
-    />,
-    <Script id="gtag-config" strategy="off-main-thread" forward={[`gtag`]}>
-      {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments)};
-        gtag('js', new Date());
-        gtag('config', ${process.env.GTAG}, { page_path: location ? location.pathname + location.search + location.hash : undefined })
-      `}
-    </Script>,
-    <script
-      key="partytown-vanilla-config"
-      dangerouslySetInnerHTML={{
-        __html: `partytown = {
-           resolveUrl(url, location) {
-              if (url.hostname.includes('google-analytics')) {
-                // Use a secure connection
-                if (url?.protocol === 'http:') {
-                  url = new URL(url.href.replace('http', 'https'))
-                }
-
-                // Point to our proxied URL
-                const proxyUrl = new URL(location.origin + '/__third-party-proxy')
-                proxyUrl.searchParams.append('url', url)
-
-                return proxyUrl
-              }
-
-              return url
-           }
-         }`,
-      }}
-    />,
+    />
   ])
 }

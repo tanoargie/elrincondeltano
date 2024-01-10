@@ -1,5 +1,10 @@
 const path = require("path")
 const postTemplate = path.resolve(`./src/templates/post.tsx`)
+const { copyLibFiles } = require('@builder.io/partytown/utils');
+
+exports.onPreBuild = async () => {
+  await copyLibFiles(path.join(__dirname, 'static', '~partytown'));
+};
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions

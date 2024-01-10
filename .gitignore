@@ -5,3 +5,4 @@ src/gatsby-types.d.ts
 src/resume/resume.log
 dist/
 .env.*
+static/~partytown
