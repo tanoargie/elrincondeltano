@@ -14,7 +14,6 @@ const config: GatsbyConfig = {
   },
   partytownProxiedURLs: [
     `https://www.googletagmanager.com/gtag/js?id=${process.env.GTAG}`,
-    `https://www.google-analytics.com/analytics.js`,
   ],
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
