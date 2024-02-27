@@ -2,7 +2,7 @@ services:
   app:
     container_name: elrincondeltano
     build: .
-    restart: always
+    restart: unless-stopped
     ports:
       - "3006:3006"
     env_file:
