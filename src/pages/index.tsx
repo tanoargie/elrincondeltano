@@ -66,7 +66,7 @@ const IndexPage = ({ data }: Data) => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <SEO />
+export const Head: HeadFC = () => <SEO title="El Rincón del Tano" />
 
 export const query = graphql`
   query {
