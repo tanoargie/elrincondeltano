@@ -56,7 +56,7 @@ const IndexPage = ({ data }: Data) => {
             {uniqueTagOptions.map(tagOption => <option key={tagOption} value={tagOption}>{tagOption}</option>)}
           </select>
         </div>
-        <div className="grid gap-8 grid-cols-2 grid-rows-2 m-4 xl:grid-cols-5 xl:grid-rows-5 lg:grid-cols-4 lg:grid-rows-4 md:grid-cols-3 md:grid-rows-3">
+        <div className="grid gap-8 grid-cols-2 m-4 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 auto-rows-auto">
           {filteredPosts.map(post => <PostPreview key={post.frontmatter.slug} {...post.frontmatter} />)}
         </div>
       </main>
