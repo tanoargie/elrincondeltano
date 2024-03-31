@@ -5,7 +5,7 @@ imgPath: ../images/youtrmr.webp
 slug: youtrmr-web
 tags:
   - web-dev
-  - youtrmr
+  - nuxt
 ---
 \
 Siempre he sido un ávido usuario de Twitter. Cada vez que paso por la red social del pajarito, trato de contestar algún tweet viral con una imágen o video en forma de respuesta un tanto ocurrente y divertida. Pero había veces que si bien tenía en la mente qué quería contestar, no tenía el archivo en cuestión.
@@ -13,5 +13,11 @@ Siempre he sido un ávido usuario de Twitter. Cada vez que paso por la red socia
 Allí es donde entra youtrmr-web. Quería hacer una página totalmente gratuita que vos le puedas pasar un link de Youtube y le indiques `desde` y `hasta` donde queres que lo corte. Todo para poder usarlo como meme.
 \
 Está hecho con un backend en Python y para el front probé usar NuxtJS porque era algo que quería ver hace bastante tiempo. Siempre me gustó NextJS (aunque no lo usé demasiado) pero últimamente me estaba cansando la política de Vercel de "siempre hay algo nuevo, y siempre lo nuevo es lo mejor, cambiá cuánto antes", así que pensé en darle una chance a Nuxt.
+\
+Después hubieron con el tiempo varios cambios en una actualización. En primer lugar, traté de leer un poco mas de las features del framework, como por ejemplo los `composables`. Todas las funciones que usaba para manejar el reproductor de video, para subirlo y para cortarlo fueron pasados a la carpeta `composables`. Se separaron las páginas entre una llamada `upload` y otra que se nombró `trim` para subir y cortar respectivamente, y un `layout` con sólo un `default`, que se comparte entre ambas páginas. Se agregaron el botón y el selector de lenguaje como `componentes`.
+\
+El back no se cambió mucho. Sigue en Python con Flask y Gunicorn. Lo único que hice es agregar un flag para cuando se descarga el video ('concurrent_fragment_downloads': 4) de yt-dlp.
+\
+Lo que traté de hacer en esta actualización es hacer el proceso un poco más simple. Se volvieron a poner los inputs para inicio y final del corte que se quiere realizar y un ayuda en el reproductor para que uno pueda ver qué parte se está cortando.
 \
 Podes chequear este nuevo proyecto <a href="https://youtrmr.samser.co/" target="_blank" style={{ color: 'blue', textDecoration: 'underline' }}>acá</a>
