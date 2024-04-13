@@ -1,4 +1,4 @@
-FROM node:18.14-alpine as setup
+FROM node:18-alpine as setup
 WORKDIR /app
 ENV NODE_ENV=production
 RUN apk add --no-cache --update python3 make g++ && rm -rf /var/cache/apk/*
