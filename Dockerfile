@@ -1,10 +1,15 @@
-FROM node:18.14-alpine
-RUN apk add --update python3 make g++ && rm -rf /var/cache/apk/*
-RUN npm install -g node-gyp
+FROM node:18.14-alpine as setup
 WORKDIR /app
+ENV NODE_ENV=production
+RUN apk add --no-cache --update python3 make g++ && rm -rf /var/cache/apk/*
+RUN npm install -g node-gyp
 COPY package*.json /app
-RUN npm ci
-COPY . .
+RUN npm ci --production
+
+FROM setup as builder
+COPY . /app
 RUN npm run build
-EXPOSE 3006
-CMD ["npm", "run", "serve", "--", "-p", "3006", "-H", "0.0.0.0"]
+
+FROM nginx:stable-alpine as runner
+COPY --from=builder /app/public /usr/share/nginx/html
+CMD ["nginx", "-g", "daemon off;"]

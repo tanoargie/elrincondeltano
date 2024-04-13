@@ -1,9 +1,8 @@
 services:
   app:
-    container_name: elrincondeltano
     build: .
     restart: unless-stopped
     ports:
-      - "3006:3006"
+      - "3006:80"
     env_file:
-      - .env.production
+      - .env
