@@ -7,3 +7,11 @@
     font-family: 'Nunito Sans';
   }
 }
+
+@layer components {
+  ul, ol {
+    list-style-type: disc;
+    margin: .5rem;
+    padding: .5rem;
+  }
+}

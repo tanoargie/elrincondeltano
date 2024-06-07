@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@mdx-js/mdx':
+        specifier: ^2.3.0
+        version: 2.3.0
       '@mdx-js/react':
         specifier: ^2.3.0
         version: 2.3.0(react@18.2.0)

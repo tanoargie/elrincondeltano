@@ -7,16 +7,31 @@ tags:
   - web-dev
   - rails
 ---
-Quise probar cómo funcionan los websockets bajo la "forma" Rails de implementar Websockets, que se llama Action Cable (mas info [acá](https://guides.rubyonrails.org/action_cable_overview.html)).
+Quise probar cómo funcionan los websockets bajo la "forma" Rails de implementar Websockets, que se llama <Anchor text="Action Cable" href="https://guides.rubyonrails.org/action_cable_overview.html" />.
 
 \
-Samratings básicamente corre un job cada 10 minutos que guarda cuántas personas están viendo ciertos canales, tanto por Youtube como por Twitch. Ésto se hizo con Active Job (sí, la "forma" de Rails de correr un job) y otra herramienta que es Sidekiq (la queue). 
+Samratings básicamente corre un job cada 15 minutos que guarda cuántas personas están viendo ciertos canales, tanto por Youtube como por Twitch. Ésto se hizo con Active Job (sí, la "forma" de Rails de correr un job) y otra herramienta que es Sidekiq (la queue). 
 
 \
-Después hice 2 clientes. Uno para Twitch y otro para Youtube, así pueden usar los endpoints de las APIs oficiales de cada uno.
+Después hice 2 clientes. Uno para Twitch y otro para Youtube, así pueden usar los endpoints de las APIs oficiales de cada uno. Lo que me falta hacer es un polimorfismo para poner por delante de ambos un cliente general.
 
 \
 Y finalmente, la parte más complicada fue la de websockets. Hasta ahora lo que pasaba era que cuando ibas a la página te daba el último número, pero eso no es lo que hace una verdadera app de ratings. Una verdadera app de ratings actualiza sola cada X tiempo con los nuevos ratings. Para ésto último también tuve que implementar no sólo Action Cable, sino también Hotwire, que es la nueva forma de Rails para hacer el frontend más ameno para los que venimos de Javascript. De este modo, cuando llegan los datos al consumer (el que suscribe es el job), éste consumer puede modificar el front con Javascript.
 
 \
-Otro de los desafíos fue dockerizar todo el proyecto. Vale decir que por ahora estoy usando Action Cable de forma agregada a la app de Rails, no como Standalone, pero no se preocupen que ya se viene la parte 2 donde lo voy a pasar a Standalone y vamos a seguir ahondando en este proyecto. Lo pueden ver live <a href="https://samratings.samser.co" target="_blank" style={{ color: 'blue', textDecoration: 'underline' }}>acá</a>. Nos vemos!
+Otro de los desafíos fue dockerizar todo el proyecto. Vale decir que por ahora estoy usando Action Cable de forma agregada a la app de Rails, no como Standalone, pero no se preocupen que ya se viene la parte 2 donde lo voy a pasar a Standalone y vamos a seguir ahondando en este proyecto. Lo pueden ver live <Anchor href="https://samratings.samser.co" text="acá" />. Nos vemos!
+
+\
+**UPDATE**
+
+\
+Hubieron algunos cambios desde la última vez que nos vimos.
+
+\
+En primer lugar, se cambió Samratings a su propia instancia de GCP. Se pasó a la versión Standalone de Action Cable (con pocos threads igual). Tambien agregué triggers en Cloud Build para que cuando uno pushea un tag se haga _build_ y _push_ de una imágen de Docker al Artifact Repository. Luego en el server lo único que hago es pullear la imágen con Docker Compose y darle _up_. Al igual que todos los demás proyectos, ahora todo Samser está configurado con Cloudflare (antes de llegar a la VM de GCP). 
+
+\
+Por último, se agregaron gráficos con <Anchor text="Chartkick" href="https://github.com/ankane/chartkick" /> para los canales y las categorías. Voy a seguir experimentando con ésto último. 
+
+\
+En el próximo update voy a tratar de mejorar el código y agregar mas tests automatizados (lo lograré? Lo veremos en el próximo episodio...).

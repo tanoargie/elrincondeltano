@@ -8,16 +8,20 @@ tags:
   - web-dev
 ---
 \
-Es el sueño húmedo de todo desarrollador no tener que usar el mouse. Es más, ni siquiera tenerlo en el escritorio.
+Es el sueño húmedo de todo desarrollador no tener que usar el mouse/ratón. Es más, ni siquiera tenerlo en el escritorio.
+
 \
-Tratando de llegar a esa utopía, siempre fui de poco usar el mouse. Desde hace ya varios años que vengo usando Vimium para emular Vim en Chrome (abrir nuevas tabs, clickear en enlaces, y otras yerbas), tmux para window tilling, skhd para shortcuts a nivel de OS, etc.
+Tratando de llegar a esa utopía, siempre fui de poco usarlo. Desde hace ya varios años que vengo usando Vimium para emular Vim en Chrome (abrir nuevas tabs, clickear en enlaces, y otras yerbas), tmux para window tilling, skhd para shortcuts a nivel de OS, etc.
+
 \
 Así que decidí poner manos a la práctica y ver si podía hacer algo para tener el historial de tabs que abro e ir para atrás o para adelante en ese historial con un shortcut de teclado. También después agregue otras 2 funcionalidades mucho mas accesibles y fáciles de programar:
- - Que se puedan borrar tabs duplicadas.
- - Que se puedan borrar todas las tabs excepto la actual.
-\
+- Que se puedan borrar tabs duplicadas.
+- Que se puedan borrar todas las tabs excepto la actual
+
 Primero probé con la típica forma de hacer un historial: hacer una lista doblemente enlazada. Creo que fue la primera vez que tuve que hacer una lista enlazada que no sea en una entrevista de laburo. Afortunadamente, después se me ocurrió otra forma con un simple puntero y un arreglo de IDs (id de cada tab). No sé si es la mejor forma de representar un historial, pero por ahora viene andando bien.
+
 \
-Pueden encontrar SamExt (sí lo sé, es un pésimo nombre para una extensión, pero es Sam+Extension después de todo...) en el Chrome Extension Store <a href="https://chromewebstore.google.com/detail/samext/folkogmaemenfaebhgdnpkminckfppdd?hl=es" target="_blank" style={{ color: 'blue', textDecoration: 'underline' }}>acá</a>.
+Pueden encontrar SamExt (sí lo sé, es un pésimo nombre para una extensión, pero es Sam+Extension después de todo...) en el Chrome Extension Store <Anchor href="https://chromewebstore.google.com/detail/samext/folkogmaemenfaebhgdnpkminckfppdd?hl=es" text="acá" />.
+
 \
-Por otro lado, el <a href="https://github.com/tanoargie/samext" target="_blank" style={{ color: 'blue', textDecoration: 'underline' }}>código</a> es totalmente abierto y gratuito.
+Por otro lado, el <Anchor text="código" href="https://github.com/tanoargie/samext" /> es totalmente abierto y gratuito.

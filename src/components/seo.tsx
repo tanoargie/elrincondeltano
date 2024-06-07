@@ -8,7 +8,7 @@ type SEOProps = {
   children?: string | JSX.Element | JSX.Element[]
 }
 
-export const SEO = ({ title, description, pathname, children }: SEOProps) => {
+export default function SEO({ title, description, pathname, children }: SEOProps) {
   const { title: defaultTitle, description: defaultDescription, image, siteUrl, twitterUsername } = useSiteMetadata()
 
   const seo = {

@@ -1,9 +1,10 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { MDXProvider } from "@mdx-js/react"
-import { SEO } from "../components/seo"
+import SEO from "../components/seo"
+import Anchor from "../components/anchor"
 
-const shortcodes = { Link } // Provide common components here
+const shortcodes = { Link, Anchor } // Provide common components here
 
 type Data = {
   mdx: {
@@ -17,8 +18,8 @@ type Children = (string | JSX.Element | JSX.Element[]);
 
 export default function PageTemplate({ data, children }: { data: Data, children: Children }) {
   return (
-    <div className="font-ns text-center">
-      <h1 className="text-lg font-bold">{data.mdx.frontmatter.title}</h1>
+    <div className="font-ns m-4">
+      <h1 className="text-xl font-bold">{data.mdx.frontmatter.title}</h1>
       <MDXProvider components={shortcodes}>
         {children}
       </MDXProvider>
