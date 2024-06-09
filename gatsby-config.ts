@@ -8,7 +8,7 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `elrincondeltano`,
     siteUrl: `https://www.elrincondeltano.com`,
-    description: `Blog Personal de Tano Serio`,
+    description: `Blog Personal del Tano`,
     twitterUsername: `@tanoargie`,
     image: `/images/logo.svg`,
   },

@@ -37,7 +37,7 @@ const IndexPage = ({ data }: Data) => {
         <div className="flex flex-row place-content-between">
           <div className="flex items-center">
             <StaticImage src="../images/logo.svg" alt="Samser Logo" className="w-12 h-12 mt-4 mb-4 ml-4 mr-1" />
-            <span className="italic">Tano Serio</span>
+            <span className="italic">Tano</span>
           </div>
           <div className="flex items-center gap-4 m-4">
             <a href="resume/resume.pdf" target="_blank" className="font-bold underline">Curriculum</a>
