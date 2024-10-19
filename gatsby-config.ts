@@ -47,7 +47,13 @@ const config: GatsbyConfig = {
         display: 'standalone',
         icon: 'src/images/favicon.png'
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://elrincondeltano.samser.co`,
+      },
+    },
   ]
 };
 
