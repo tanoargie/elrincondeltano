@@ -6,7 +6,7 @@ const PostPreview = ({ title, subtitle, tags, imgPath, slug }: Post) => {
   const featuredImg = getImage(imgPath?.childImageSharp?.gatsbyImageData) as IGatsbyImageData
 
   return <div className="font-ns flex flex-col gap-4">
-    <GatsbyImage image={featuredImg} className="rounded h-2/6 w-1/3" alt={title} />
+    <GatsbyImage image={featuredImg} className="rounded h-2/6 w-1/2" alt={title} />
     <div className="h-3/6">
       <span className="font-bold">
         {title}
