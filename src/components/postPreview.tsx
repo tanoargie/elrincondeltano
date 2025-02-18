@@ -7,7 +7,7 @@ const PostPreview = ({ title, subtitle, tags, imgPath, slug }: Post) => {
 
   return <div className="font-ns flex flex-col gap-4">
     <GatsbyImage image={featuredImg} className="rounded h-2/6 w-1/2" alt={title} />
-    <div className="h-3/6">
+    <div className="h-1/2">
       <span className="font-bold">
         {title}
       </span>

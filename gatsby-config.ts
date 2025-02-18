@@ -71,6 +71,53 @@ const config: GatsbyConfig = {
         siteUrl: `https://elrincondeltano.samser.co`,
       },
     },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.nodes.map(node => {
+                return Object.assign({}, node.frontmatter, {
+                  description: node.excerpt,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + node.frontmatter.slug,
+                  guid: site.siteMetadata.siteUrl + node.frontmatter.slug,
+                  custom_elements: [{ "content:encoded": node.body }],
+                })
+              })
+            },
+            query: `
+              {
+                site {
+                 siteMetadata {
+                   title
+                   description
+                   twitterUsername
+                   image
+                   siteUrl
+                 }
+                }         
+                allMdx {
+                  nodes {
+                    id
+                    excerpt
+                    body
+                    frontmatter {
+                      slug
+                      date
+                      title
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "El Rincon del Tano RSS Feed",
+          },
+        ],
+      }
+    },
   ]
 };
 
