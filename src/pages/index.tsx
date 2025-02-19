@@ -40,6 +40,7 @@ const IndexPage = ({ data }: Data) => {
             <span className="italic">Tano</span>
           </div>
           <div className="flex items-center gap-4 m-4">
+            <a href="https://elrincondeltano.samser.co/rss.xml" className="flex" target="_blank"><StaticImage src="../icons/rss-icon.svg" alt="RSS icon" className="w-4 h-4 mr-1" /></a>
             <a href="resume/resume.pdf" target="_blank" className="font-bold underline">Curriculum</a>
             <a href="mailto:franco@samser.co" className="flex rounded bg-emerald-900 text-white p-4">Contactame</a>
           </div>
