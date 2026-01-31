@@ -7,6 +7,9 @@
   Gatsby minimal TypeScript starter
 </h1>
 
+## 📋 Requirements
+- TeX installed on your system
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
@@ -52,3 +55,4 @@
 Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
 
 [<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+
