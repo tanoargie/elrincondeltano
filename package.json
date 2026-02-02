@@ -14,7 +14,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "generate-resume": "pdflatex src/resume/resume.tex && mv src/resume/resume.pdf static/resume/resume.pdf"
+    "generate-resume": "cd src/resume && pdflatex resume.tex -output-format=pdf && cd ../..",
+    "build-resume": "npm run generate-resume && mv src/resume/resume.pdf static/resume/resume.pdf"
   },
   "dependencies": {
     "@mdx-js/mdx": "^2.3.0",
