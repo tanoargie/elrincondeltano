@@ -6,8 +6,8 @@ import { Post } from '../utils/types'
 const PostPreview = ({ title, subtitle, tags, imgPath, slug }: Post) => {
   const featuredImg = getImage(imgPath?.childImageSharp?.gatsbyImageData) as IGatsbyImageData
 
-  return <Link to={`/content/${slug}`} className="flex flex-col overflow-hidden rounded-lg border border-stone-200 bg-white transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 dark:border-stone-800 dark:bg-stone-900">
-    <GatsbyImage image={featuredImg} className="aspect-[3/2] w-full" alt={title} />
+  return <Link to={`/content/${slug}`} className="flex flex-col overflow-hidden rounded-lg border border-stone-200 bg-white transition hover:shadow-md hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 dark:border-stone-800 dark:bg-stone-900">
+    <GatsbyImage image={featuredImg} className="aspect-[3/2] w-full" alt="" />
     <div className="flex flex-col gap-2 p-4 flex-1">
       <span className="font-semibold line-clamp-2">{title}</span>
       <p className="text-sm text-stone-500 line-clamp-2 dark:text-stone-400">{subtitle}</p>
