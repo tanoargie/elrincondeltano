@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react"
+import React, { useState, useMemo } from "react"
 import PostPreview from '../components/postPreview'
 import type { HeadFC } from "gatsby"
 import { graphql } from "gatsby"
