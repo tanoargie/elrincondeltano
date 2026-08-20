@@ -1,9 +1,9 @@
-import React, { useState, useMemo } from "react"
+import { useState, useMemo } from "react"
 import PostPreview from '../components/postPreview'
 import type { HeadFC } from "gatsby"
 import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import { Post } from '../utils/types'
+import{ Post } from '../utils/types'
 import SEO from "../components/seo"
 
 type PostData = {
@@ -41,7 +41,7 @@ const IndexPage = ({ data }: Data) => {
           </div>
           <div className="flex items-center gap-4 m-4">
             <a href="https://elrincondeltano.samser.co/rss.xml" className="flex" target="_blank"><StaticImage src="../icons/rss-icon.svg" alt="RSS icon" className="w-4 h-4 mr-1" /></a>
-            <a href="resume/resume.pdf" target="_blank" className="font-bold underline">Curriculum</a>
+            <a href="resume/resume.pdf" target="_blank" className="font-bold underline">CV</a>
             <a href="mailto:franco@samser.co" className="flex rounded bg-emerald-900 text-white p-4">Contactame</a>
           </div>
         </div>
