@@ -80,7 +80,7 @@ export const query = graphql`
           title
           imgPath {
             childImageSharp {
-              gatsbyImageData(width: 250)
+              gatsbyImageData(width: 600)
             }
           }
           tags
