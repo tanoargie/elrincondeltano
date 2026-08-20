@@ -32,32 +32,32 @@ const IndexPage = ({ data }: Data) => {
   const [selectedTag, setSelectedTag] = useState('todos')
   const filteredPosts = useMemo(() => filterPosts(posts, selectedTag), [posts, selectedTag])
   return (
-    <div className="font-ns">
-      <header className="text-center mb-4">
-        <div className="flex flex-row place-content-between">
-          <div className="flex items-center">
-            <StaticImage src="../images/logo.svg" alt="Samser Logo" className="w-12 h-12 mt-4 mb-4 ml-4 mr-1" />
-            <span className="italic">Tano</span>
+    <div className="font-sans">
+      <header className="max-w-6xl mx-auto px-4 pt-6">
+        <div className="flex flex-row items-center justify-between">
+          <div className="flex items-center gap-1">
+            <StaticImage src="../images/logo.svg" alt="Samser Logo" className="w-10 h-10" />
+            <span className="italic text-stone-500 dark:text-stone-400">Tano</span>
           </div>
-          <div className="flex items-center gap-4 m-4">
-            <a href="https://elrincondeltano.samser.co/rss.xml" className="flex" target="_blank"><StaticImage src="../icons/rss-icon.svg" alt="RSS icon" className="w-4 h-4 mr-1" /></a>
-            <a href="resume/resume.pdf" target="_blank" className="font-bold underline">CV</a>
-            <a href="mailto:franco@samser.co" className="flex rounded bg-emerald-900 text-white p-4">Contactame</a>
-          </div>
+          <nav className="flex items-center gap-4">
+            <a href="https://elrincondeltano.samser.co/rss.xml" className="flex items-center" target="_blank"><StaticImage src="../icons/rss-icon.svg" alt="RSS icon" className="w-4 h-4" /></a>
+            <a href="resume/resume.pdf" target="_blank" className="font-semibold underline underline-offset-4">CV</a>
+            <a href="mailto:franco@samser.co" className="rounded-lg border border-emerald-900 px-3 py-1.5 text-sm font-medium text-emerald-900 transition-colors hover:bg-emerald-900 hover:text-white dark:border-emerald-600 dark:text-emerald-500 dark:hover:bg-emerald-600 dark:hover:text-white">Contactame</a>
+          </nav>
         </div>
-        <h1 className="font-bold">
-          El Rincón del Tano
-        </h1>
-        <h2>Las boludeces de un escorpiano, en voz alta.</h2>
+        <div className="mt-8 mb-6 text-center">
+          <h1 className="font-bold text-3xl md:text-4xl">El Rincón del Tano</h1>
+          <p className="mt-2 text-stone-500 dark:text-stone-400">Las boludeces de un escorpiano, en voz alta.</p>
+        </div>
       </header>
-      <main>
-        <div className="mx-4">
-          <label htmlFor="tags">Filtrar por tag: </label>
-          <select id="tags" name="tags" defaultValue="todos" onChange={(e) => setSelectedTag(e.target.value)}>
+      <main className="max-w-6xl mx-auto px-4 pb-8">
+        <div className="mb-6">
+          <label htmlFor="tags" className="mr-2 text-sm text-stone-500 dark:text-stone-400">Filtrar por tag: </label>
+          <select id="tags" name="tags" defaultValue="todos" onChange={(e) => setSelectedTag(e.target.value)} className="rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 dark:border-stone-700 dark:bg-stone-900">
             {uniqueTagOptions.map(tagOption => <option key={tagOption} value={tagOption}>{tagOption}</option>)}
           </select>
         </div>
-        <div className="grid gap-8 grid-cols-2 m-4 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 auto-rows-fr">
+        <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 auto-rows-fr">
           {filteredPosts.map(post => <PostPreview key={post.frontmatter.slug} {...post.frontmatter} />)}
         </div>
       </main>
