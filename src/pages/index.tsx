@@ -42,7 +42,7 @@ const IndexPage = ({ data }: Data) => {
           <nav className="flex items-center gap-4">
             <a href="https://elrincondeltano.samser.co/rss.xml" className="flex items-center" target="_blank"><StaticImage src="../icons/rss-icon.svg" alt="RSS icon" className="w-4 h-4" /></a>
             <a href="resume/resume.pdf" target="_blank" className="font-semibold underline underline-offset-4">CV</a>
-            <a href="mailto:franco@samser.co" className="rounded-lg border border-emerald-900 px-3 py-1.5 text-sm font-medium text-emerald-900 transition-colors hover:bg-emerald-900 hover:text-white dark:border-emerald-600 dark:text-emerald-500 dark:hover:bg-emerald-600 dark:hover:text-white">Contactame</a>
+            <a href="mailto:francoagustinserio@gmail.com" className="rounded-lg border border-emerald-900 px-3 py-1.5 text-sm font-medium text-emerald-900 transition-colors hover:bg-emerald-900 hover:text-white dark:border-emerald-600 dark:text-emerald-500 dark:hover:bg-emerald-600 dark:hover:text-white">Contactame</a>
           </nav>
         </div>
         <div className="mt-8 mb-6 text-center">
