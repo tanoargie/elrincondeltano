@@ -11,6 +11,7 @@ type Data = {
   mdx: {
     frontmatter: {
       title: string
+      slug: string
       subtitle: string
       date: string
       tags: Array<string>
@@ -50,13 +51,21 @@ export default function PageTemplate({ data, children }: { data: Data, children:
   )
 }
 
-export const Head = ({ data }: { data: Data }) => <SEO title={data.mdx.frontmatter.title} />
+export const Head = ({ data }: { data: Data }) => (
+  <SEO
+    title={data.mdx.frontmatter.title}
+    description={data.mdx.frontmatter.subtitle}
+    pathname={`/content/${data.mdx.frontmatter.slug}`}
+    type="article"
+  />
+)
 
 export const query = graphql`
   query($id: String!) {
     mdx(id: { eq: $id }) {
       frontmatter {
         title
+        slug
         subtitle
         date
         tags
