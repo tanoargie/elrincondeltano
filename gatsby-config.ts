@@ -7,7 +7,7 @@ require("dotenv").config({
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `elrincondeltano`,
-    siteUrl: `https://www.elrincondeltano.com`,
+    siteUrl: `https://elrincondeltano.sam-ser.com`,
     description: `Blog Personal del Tano`,
     twitterUsername: `@tanoargie`,
     image: `/images/logo.svg`,
@@ -68,7 +68,7 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://elrincondeltano.samser.co`,
+        siteUrl: `https://elrincondeltano.sam-ser.com`,
       },
     },
     {
