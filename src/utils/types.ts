@@ -9,6 +9,7 @@ type Image = {
 type Post = {
   title: string,
   subtitle: string,
+  date: string,
   tags: Array<string>,
   imgPath: Image,
   slug: string
