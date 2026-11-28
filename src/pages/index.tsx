@@ -71,13 +71,14 @@ export const Head: HeadFC = () => <SEO title="El Rincón del Tano" />
 
 export const query = graphql`
   query {
-    allMdx {
+    allMdx(sort: { fields: [fields___dateSort, frontmatter___title], order: [DESC, ASC] }) {
       nodes {
         id
         frontmatter {
           slug
           subtitle
           title
+          date
           imgPath {
             childImageSharp {
               gatsbyImageData(width: 600)
